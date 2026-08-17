@@ -2,40 +2,41 @@ using UnityEngine;
 
 public class BenchRotate : MonoBehaviour
 {
-    public float rotateSpeed = 300f;
+    public float moveSpeed = 3f;
+    public float moveDistance = 2f;
 
-    private bool rotating = false;
-    private Quaternion targetRotation;
+    private bool moving = false;
+    private Vector3 targetPosition;
 
     void Start()
     {
-        targetRotation = transform.rotation * Quaternion.Euler(0f, 90f, 0f);
+        targetPosition = transform.position - new Vector3(0f, moveDistance, 0f);
     }
 
     void Update()
     {
-        if (rotating)
+        if (moving)
         {
-            transform.rotation = Quaternion.RotateTowards(
-                transform.rotation,
-                targetRotation,
-                rotateSpeed * Time.deltaTime
+            transform.position = Vector3.MoveTowards(
+                transform.position,
+                targetPosition,
+                moveSpeed * Time.deltaTime
             );
 
-            if (Quaternion.Angle(transform.rotation, targetRotation) < 0.1f)
+            if (Vector3.Distance(transform.position, targetPosition) < 0.01f)
             {
-                transform.rotation = targetRotation;
-                rotating = false;
+                transform.position = targetPosition;
+                moving = false;
             }
         }
     }
 
-    public void RotateBench()
+    public void MoveBench()
     {
-        if (!rotating)
+        if (!moving)
         {
-            targetRotation = transform.rotation * Quaternion.Euler(0f, 90f, 0f);
-            rotating = true;
+            targetPosition = transform.position - new Vector3(0f, moveDistance, 0f);
+            moving = true;
         }
     }
 }

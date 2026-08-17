@@ -22,10 +22,10 @@ public class BallHit : MonoBehaviour
         if (!collision.gameObject.CompareTag("Target"))
             return;
 
-        // Bench rotate
+        // Bench move
         if (bench != null)
         {
-            bench.RotateBench();
+            bench.MoveBench();
         }
 
         // Player falls into tank
