@@ -1012,6 +1012,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerFall
   animator: {fileID: 140082218}
   tankFallPoint: {fileID: 2015463159}
+  fallDelay: 1
 --- !u!4 &140082222 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 554ad983f7eb27c49b164b49a3ed3eef, type: 3}
@@ -6400,7 +6401,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 554ad983f7eb27c49b164b49a3ed3eef, type: 3}
       propertyPath: m_TagString
-      value: Finish
+      value: Target
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 554ad983f7eb27c49b164b49a3ed3eef, type: 3}
       propertyPath: m_Controller

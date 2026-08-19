@@ -10,7 +10,7 @@ public class BenchRotate : MonoBehaviour
 
     void Start()
     {
-        targetPosition = transform.position - new Vector3(0f, moveDistance, 0f);
+        targetPosition = transform.position - new Vector3(0f, 0f, -moveDistance);
     }
 
     void Update()
@@ -35,7 +35,7 @@ public class BenchRotate : MonoBehaviour
     {
         if (!moving)
         {
-            targetPosition = transform.position - new Vector3(0f, moveDistance, 0f);
+            targetPosition = transform.position - new Vector3(0f, 0f, -moveDistance);
             moving = true;
         }
     }
